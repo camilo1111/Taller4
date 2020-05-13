@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//creamos nuestra variable preference
+
 
 
         ImageBtnHomer.setOnClickListener {
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             continueDetail.putExtra("photo","homer" )
             continueDetail.putExtra("description", "homer")
             startActivity(continueDetail)
-            finish()
+
 
 
         }
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             continueDetail.putExtra("photo","bart" )
             continueDetail.putExtra("description", "bart")
             startActivity(continueDetail)
-            finish()
+
 
         }
 
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 continueDetail.putExtra("description", "marge")
 
                 startActivity(continueDetail)
-                finish()
+
         }
 
         ImageBtnLisa.setOnClickListener {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             continueDetail.putExtra("description", "lisa")
 
             startActivity(continueDetail)
-            finish()
+
         }
 
         ImageBtnMaggie.setOnClickListener {
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             continueDetail.putExtra("description", "maggie")
 
             startActivity(continueDetail)
-            finish()
+
 
         }
 
@@ -78,17 +78,9 @@ class MainActivity : AppCompatActivity() {
             continueDetail.putExtra("description", "abraham")
 
             startActivity(continueDetail)
-            finish()
+
 
         }
-
-        //val contentRate= this.intent.extras
-       // if(contentRate!= null){
-         //   calificacion= contentRate.getFloat("rate")
-           // mPreferences.setRate(calificacion)
-        //}
-
-
 
 
     }

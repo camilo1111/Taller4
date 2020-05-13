@@ -73,8 +73,6 @@ class DetailActivity : AppCompatActivity() {
 
             val ratingValue = ratingBar.rating
             Toast.makeText(this, "Rating is:"+ratingValue,Toast.LENGTH_LONG).show()
-            val continueDetail = Intent (this, MainActivity::class.java)
-            startActivity(continueDetail)
             finish()
 
         }
@@ -87,7 +85,7 @@ class DetailActivity : AppCompatActivity() {
         setName()
         setPhoto()
         setDescription()
-        //getRate()
+
 
     }
 
@@ -129,49 +127,4 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    fun getRate () {
-        val mPreferences = MyPreferences(this)
-
-        buttonVote.setOnClickListener {
-
-            var calificacion = ratingBar.getRating()
-            val contentId= this.intent.extras
-            if(contentId !=null) {
-                val id = contentId.getInt("id")
-                if (id != null) {
-                    when (id) {
-                        1 -> {
-                            mPreferences.setRateHomer(calificacion)
-                        }
-                        2 -> {
-                            mPreferences.setRateBart(calificacion)
-                        }
-                        3 -> {
-                            mPreferences.setRateMarge(calificacion)
-                        }
-                        4 -> {
-                            mPreferences.setRateLisa(calificacion)
-                        }
-                        5 -> {
-                            mPreferences.setRateMaggie(calificacion)
-                        }
-                        6 -> {
-                            mPreferences.setRateAbraham(calificacion)
-                        }
-                    }
-
-                }
-            }
-
-
-            val ratingValue = ratingBar.rating
-            Toast.makeText(this, "Rating is:"+ratingValue,Toast.LENGTH_LONG).show()
-            val continueDetail = Intent (this, MainActivity::class.java)
-            startActivity(continueDetail)
-            finish()
-
-        }
-
-
-    }
 }
