@@ -1,7 +1,9 @@
 package com.uan.taller4
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_detail.*
 import java.util.*
 
@@ -10,9 +12,82 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        val mPreferences = MyPreferences(this)
+        val contentId= this.intent.extras
+
+            val id = contentId?.getInt("id")
+
+            if (id!=null){
+                when (id) {
+                    1 -> {
+                        ratingBar.setRating(mPreferences.getRateHomer())
+                    }
+                    2 -> {
+                        ratingBar.setRating(mPreferences.getRateBart())
+                    }
+                    3 -> {
+                        ratingBar.setRating(mPreferences.getRateMarge())
+                    }
+                    4 -> {
+                        ratingBar.setRating(mPreferences.getRateLisa())
+                    }
+                    5 -> {
+                        ratingBar.setRating(mPreferences.getRateMaggie())
+                    }
+                    6 -> {
+                        ratingBar.setRating(mPreferences.getRateAbraham())
+                    }
+                }
+        }
+
+        buttonVote.setOnClickListener {
+
+            var calificacion = ratingBar.getRating()
+
+                if (id != null) {
+                    when (id) {
+                        1 -> {
+                            mPreferences.setRateHomer(calificacion)
+                        }
+                        2 -> {
+                            mPreferences.setRateBart(calificacion)
+                        }
+                        3 -> {
+                            mPreferences.setRateMarge(calificacion)
+                        }
+                        4 -> {
+                            mPreferences.setRateLisa(calificacion)
+                        }
+                        5 -> {
+                            mPreferences.setRateMaggie(calificacion)
+                        }
+                        6 -> {
+                            mPreferences.setRateAbraham(calificacion)
+                        }
+
+
+                }
+            }
+
+
+            val ratingValue = ratingBar.rating
+            Toast.makeText(this, "Rating is:"+ratingValue,Toast.LENGTH_LONG).show()
+            val continueDetail = Intent (this, MainActivity::class.java)
+            startActivity(continueDetail)
+            finish()
+
+        }
+
+
+
+
+
+
         setName()
         setPhoto()
         setDescription()
+        //getRate()
 
     }
 
@@ -51,6 +126,52 @@ class DetailActivity : AppCompatActivity() {
             scanner.close()
 
         }
+
+    }
+
+    fun getRate () {
+        val mPreferences = MyPreferences(this)
+
+        buttonVote.setOnClickListener {
+
+            var calificacion = ratingBar.getRating()
+            val contentId= this.intent.extras
+            if(contentId !=null) {
+                val id = contentId.getInt("id")
+                if (id != null) {
+                    when (id) {
+                        1 -> {
+                            mPreferences.setRateHomer(calificacion)
+                        }
+                        2 -> {
+                            mPreferences.setRateBart(calificacion)
+                        }
+                        3 -> {
+                            mPreferences.setRateMarge(calificacion)
+                        }
+                        4 -> {
+                            mPreferences.setRateLisa(calificacion)
+                        }
+                        5 -> {
+                            mPreferences.setRateMaggie(calificacion)
+                        }
+                        6 -> {
+                            mPreferences.setRateAbraham(calificacion)
+                        }
+                    }
+
+                }
+            }
+
+
+            val ratingValue = ratingBar.rating
+            Toast.makeText(this, "Rating is:"+ratingValue,Toast.LENGTH_LONG).show()
+            val continueDetail = Intent (this, MainActivity::class.java)
+            startActivity(continueDetail)
+            finish()
+
+        }
+
 
     }
 }
