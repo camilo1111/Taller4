@@ -1,6 +1,7 @@
 package com.uan.taller4
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -10,8 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
+        PlayMusic()
 
         ImageBtnHomer.setOnClickListener {
             val continueDetail = Intent (this, DetailActivity::class.java)
@@ -83,5 +83,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun PlayMusic(){
+        var mediaPlayer: MediaPlayer? =
+            MediaPlayer.create(this, R.raw.sound_file)
+        mediaPlayer?.start()
     }
 }
