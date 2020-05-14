@@ -45,9 +45,7 @@
                 android:background="#428e92"
                 android:padding="0dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/homer"
-
-                android:tag="guardiansofthegalaxyvol2" />
+                android:src="@drawable/homer" />
 
             <ImageButton
                 android:id="@+id/ImageBtnBart"
@@ -59,7 +57,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/bart"
 
-                android:tag="spidermanhomecoming" />
+                 />
 
             <ImageButton
                 android:id="@+id/ImageBtnMarge"
@@ -71,7 +69,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/marge"
 
-                android:tag="thorragnarok" />
+                 />
         </TableRow>
 
         <TableRow
@@ -88,8 +86,7 @@
                 android:padding="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/lisa"
-
-                android:tag="guardiansofthegalaxyvol2" />
+                 />
 
             <ImageButton
                 android:id="@+id/ImageBtnMaggie"
@@ -101,7 +98,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/maggie"
 
-                android:tag="spidermanhomecoming" />
+                 />
 
             <ImageButton
                 android:id="@+id/ImageBtnAbraham"
@@ -113,7 +110,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/abraham"
 
-                android:tag="thorragnarok" />
+                />
         </TableRow>
 
 

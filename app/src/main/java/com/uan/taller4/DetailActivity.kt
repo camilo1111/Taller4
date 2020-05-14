@@ -65,10 +65,8 @@ class DetailActivity : AppCompatActivity() {
                         6 -> {
                             mPreferences.setRateAbraham(calificacion)
                         }
-
-
+                     }
                 }
-            }
 
 
             val ratingValue = ratingBar.rating
@@ -77,15 +75,9 @@ class DetailActivity : AppCompatActivity() {
 
         }
 
-
-
-
-
-
         setName()
         setPhoto()
         setDescription()
-
 
     }
 
@@ -100,7 +92,7 @@ class DetailActivity : AppCompatActivity() {
     fun setPhoto(){
         val contentPhoto = this.intent.extras
         if (contentPhoto != null){
-            val namePhoto =contentPhoto.getString("photo")
+            val namePhoto =contentPhoto.getString("pd")
             val idImage = resources.getIdentifier(namePhoto,"drawable", packageName)
             imageViewPhoto.setImageResource(idImage)
 
@@ -112,7 +104,7 @@ class DetailActivity : AppCompatActivity() {
         val contentDescription = this.intent.extras
         var characterDescription = ""
         if (contentDescription != null){
-            val nameDescription =contentDescription.getString("description")
+            val nameDescription =contentDescription.getString("pd")
             val idDescription = resources.getIdentifier(nameDescription,"raw", packageName)
 
             val scanner = Scanner(resources.openRawResource(idDescription))
